@@ -113,6 +113,15 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 .info-val{font-size:12px;color:var(--color-text-primary);line-height:1.5}
 .link{font-size:11px;color:var(--color-text-info);cursor:pointer;text-decoration:none}
 .warn-note{margin-top:16px;font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:10px 14px;border-radius:var(--border-radius-md);line-height:1.6;border-left:2px solid var(--color-border-secondary)}
+.explainer{border-top:0.5px solid var(--color-border-tertiary);padding:12px 16px;background:var(--color-background-secondary)}
+.explainer-toggle{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;font-weight:500;color:var(--color-text-secondary);user-select:none;list-style:none;padding:0}
+.explainer-toggle::marker,.explainer-toggle::-webkit-details-marker{display:none}
+.explainer-toggle .arr{font-size:10px;transition:transform .2s;display:inline-block}
+details[open] .explainer-toggle .arr{transform:rotate(90deg)}
+.explainer-body{margin-top:10px;display:flex;flex-direction:column;gap:8px}
+.exp-block{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:10px 12px}
+.exp-title{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.exp-text{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
 </style>
 </head>
 <body>
@@ -176,6 +185,25 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Mi a Toni&amp;Guy módszertan és miért számít?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Toni&amp;Guy — a brit precíziós iskola</div>
+<div class="exp-text">A Toni&amp;Guy 1963-ban alapított londoni fodrászlánc, amely saját oktatási rendszert fejlesztett ki. A módszertan lényege a <strong>geometriai hajvágás</strong>: minden frizura pontos szögek, szekciók és formák rendszeréből épül fel. Nem "szemre" dolgoznak, hanem mértani alapon — ez teszi megismételhetővé és taníthatóvá a technikákat. A rendszer 50+ országban van jelen, így a tudás külföldön is értelmezhető és alkalmazható.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Sassoon-módszertan (Műhely Akadémia)</div>
+<div class="exp-text">Vidal Sassoon szintén londoni alapokon fejlesztette ki a saját geometriai rendszerét az 1960-as években, amely a Toni&amp;Guy-hoz hasonlóan precíziós szögeken alapul. A két módszer rokon — mindkettő a "form follows function" elvét vallja, vagyis a hajvágás formája a haj természetéből következik, nem a divatból. A Sassoon-képzett fodrászok jellemzően erős technikai alapokkal rendelkeznek.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Miért releváns a módszertan választáskor?</div>
+<div class="exp-text">A hagyományos magyar fodrászképzés kevésbé hangsúlyozza a geometriai alapokat — inkább technikák gyűjteménye. Az ilyen rendszeres módszertant tanult fodrász gyorsabban alkalmazkodik új trendekhez, mert érti az alapelveket, nem csak másolja a fogásokat. Külföldi szalonok (London, Amszterdam, Bécs) kifejezetten keresik a Toni&amp;Guy vagy Sassoon hátterű fodrászokat.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 <!-- OKTÁV -->
@@ -223,6 +251,25 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Mi a különbség OKJ, ÁE és felnőttképzés között?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">OKJ — megszűnt 2022-ben</div>
+<div class="exp-text">Az Országos Képzési Jegyzék (OKJ) volt a szakmai képesítések rendszere Magyarországon. 2022-től az új szakképzési törvény (2019. évi LXXX.) felváltotta, és átszabta a rendszert. Az "OKJ-s fodrász" mint kifejezés jogilag elavult, de a köznyelv még használja.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Államilag Elismert (ÁE) végzettség</div>
+<div class="exp-text">Az OKJ helyett ma felnőttképzési intézmények "államilag elismert" (ÁE) tanúsítványt adnak ki. Ez feljogosít vállalkozás indítására, de nem egyenértékű az iskolai szakképzési bizonyítvánnyal. Fontos: az ÁE végzettség megszerzéséhez egy független, akkreditált vizsgaközpontban kell vizsgát tenni — ezt nem mindig szervezi meg a képző intézmény.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Szakképzési bizonyítvány (duális képzés)</div>
+<div class="exp-text">Az iskolai rendszerű (duális) fodrász szakképzés teljes értékű szakképesítő bizonyítványt ad, amelyet a szakképzési törvény alapján ismernek el. Ez erősebb papír, mint az ÁE tanúsítvány. Az OKTÁV által kínált végzettség az ÁE kategóriába esik — fontos ezt tisztán látni a döntés előtt.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 <!-- MŰHELY AKADÉMIA -->
@@ -231,11 +278,11 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 <div>
 <div class="school-name">Műhely Akadémia × Selected</div>
 <div class="school-loc">Budapest, Székesfehérvár, Miskolc + bővülő</div>
-<div class="badges"><span class="badge b-teal">Duális – fodrász INGYENES!</span><span class="badge b-amber">Borbély: 1,8M Ft</span><span class="badge b-blue">Állami munkabér</span></div>
+<div class="badges"><span class="badge b-amber">Borbély: 1,8M Ft</span><span class="badge b-teal">Fodrász: duális (ingyenes)</span><span class="badge b-blue">Sassoon módszertan</span></div>
 </div>
 <div class="price-box">
-<div class="price-main">Fodrász: INGYENES</div>
-<div class="price-note">+ időarányos munkabér jár!<br>Borbély: 1 800 000 Ft<br>(vagy 1 500 000 Ft egy összegben)<br>Borbély vizsgadíj: 60 000 Ft<br>Reg. díj: 300 000 Ft (nem visszatér.)</div>
+<div class="price-main">1 800 000 Ft (borbély)</div>
+<div class="price-note">vagy 1 500 000 Ft egy összegben<br>Vizsgadíj: 60 000 Ft<br>Reg. díj: 300 000 Ft (nem visszatér.)<br><br>Fodrász képzés: duális jogviszonyban ingyenes + munkabér — de ez külön program</div>
 </div>
 </div>
 <div class="card-body">
@@ -251,8 +298,8 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 <div class="review-text">Legjobb végzősök azonnali álláslehetőséget kapnak a SELECTED szalonhálózatban. A KLIPPERS eszközpartner örökös szakmai kedvezményt ad végzősöknek.</div>
 </div>
 <div class="review-item">
-<div class="review-source">2019. évi LXXX. törvény – ellenőrzött tény ✅</div>
-<div class="review-text">A duális fodrász képzés törvény alapján INGYENES és a tanuló időarányos szakképzési munkabért kap. Ez gyökeres különbség a többi intézménytől.</div>
+<div class="review-source">2019. évi LXXX. törvény – pontosítás ⚠</div>
+<div class="review-text">A fodrász szakma duális képzőhelyként valóban ingyenes és munkabérrel jár — de ez egy külön, iskolarendszerű képzési forma. A Műhely Akadémia fő kínálata a fizetős borbély tanfolyam (1,8M Ft). A kettő nem ugyanaz a program, és nem kötelező együtt elvégezni.</div>
 </div>
 </div>
 <div class="col">
@@ -270,6 +317,25 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 <div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Borbély képzés nagyon drága (1,8M Ft)</div><div class="pm-item">Reg. díj NEM visszatéríthető</div><div class="pm-item">Minimum létszámtól függ az indulás</div><div class="pm-item">Főleg nagyvárosokban</div></div>
 </div>
 </div>
+</div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Fodrász vs. borbély képzés — mi a valódi különbség?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Fodrász képzés (duális, ingyenes)</div>
+<div class="exp-text">A fodrász szakma a 2019. évi szakképzési törvény alapján iskolarendszerű, duális képzésként végezhető el ingyenesen — ha a képző intézmény duális képzőhelyként van bejegyezve. A Műhely Akadémia rendelkezik ezzel a státusszal. Ebben az esetben a tanuló szakképzési munkaszerződést köt, és időarányos munkabért kap. Ez egy komoly lehetőség — de a helyek száma korlátozott, és minimum 15 fő kell az induláshoz.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Borbély (barber) képzés — fizetős, 1,8M Ft</div>
+<div class="exp-text">A borbély képzés nem szerepel az ingyenes duális rendszerben. Ez egy külön felnőttképzési program, amelynek díja 1 800 000 Ft (vagy 1 500 000 Ft egy összegben). A Műhely Akadémia borbély programja prémium, de ez egy önálló döntés — nem kötelező a fodrász mellé felvenni. A regisztrációs díj (300 000 Ft) nem visszatéríthető, még akkor sem, ha a képzés nem indul el.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Fodrász vs. borbély — szakmai különbség</div>
+<div class="exp-text">A fodrász képzés nőkre és férfiakra egyaránt vonatkozik: hajvágás, festés, dauer, styling. A borbély (barber) szűkebb, de mélyebb: férfi hajvágás, szakáll- és bajuszápolás, borotválás. A barber ipar az elmúlt 5 évben robbanásszerűen nőtt — egy jó barber ma Budapesten 1-2 millió Ft/hó bevételt is elérhet saját székkel. Ezért a fizetős borbély képzés is megtérülhet gyorsan.</div>
+</div>
+</div>
+</details>
 </div>
 </div>
 
@@ -322,6 +388,21 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Mi a fodrász + stylist kombináció és mire jó?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Fodrász vs. stylist — mi a különbség?</div>
+<div class="exp-text">A fodrász technikai szakma: hajvágás, festés, vegyszeres kezelések. A stylist ennél tágabb: az egész megjelenést tervezi — az arcformától az öltözékig. A Haute Couture Academy kombinált képzése mindkét területet lefedi, vagyis a végzős nemcsak vágni tud, hanem tanácsot is tud adni a vendégnek a teljes megjelenéséről. Ez prémium szalonokban, fotózásokon és divatrendezvényeken különösen értékes tudás.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Modell adatbázis — miért nagy előny?</div>
+<div class="exp-text">A legtöbb fodrász képzésen a tanulónak saját magának kell modelleket szereznie a gyakorlati órákon. Ez sok esetben az ismerősi körre szorítkozik, ami idővel kiapad. A Haute Couture Academy saját Facebook csoportot tart fenn, ahol önkéntes modellek jelentkeznek ingyenes fodrász kezelésért — így a tanulónak nem kell senkit sem "kérlelni". Ez komoly stresszcsökkentő tényező a képzés során.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 <!-- TÁRNOKY -->
@@ -369,6 +450,21 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Ki Tárnoky László és miért számít az örökség?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Tárnoky László — a hazai fodrászat legendája</div>
+<div class="exp-text">Tárnoky László a 20. századi magyar fodrászat egyik legismertebb alakja. Számtalan hazai és nemzetközi versenyen győzött, és elsőként kapott fodrászként Magyar Köztársasági Érdemrend Lovagkeresztjét. Tanítványai között van a mai hazai fodrász elit jelentős része — ha valakinek "Tárnoky-tanítvány" áll az önéletrajzában, az iparban ez azonnal minőségjelet jelent.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">5 hónapos képzés — mire elég?</div>
+<div class="exp-text">Az 5 hónapos intenzív kurzus nem ugyanolyan mélységű, mint a 10 hónapos — de gyorsabban ad papírt és belépőt a szakmába. Érettségi sem szükséges hozzá, ami teljesen egyedülálló a piacon. Azoknak ajánlott, akik már vannak némi háttértudásuk (pl. hajápolásban, stylingban), vagy egyszerűen gyorsabban szeretnének indulni. A tandíj (375 000 Ft) a piac legalsó szegmensében van.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 <!-- MESTO -->
@@ -415,6 +511,21 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Hogyan működik az online élő elméleti oktatás?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Online elmélet + helyi gyakorlat — a MESTO modellje</div>
+<div class="exp-text">A MESTO az elméleti órákat élő online közvetítésben tartja — ez azt jelenti, hogy a tanuló otthonról, telefonról vagy laptopról követi az előadást, de nem aszinkron (előre felvett) videókat néz, hanem valós időben van jelen. Ez rugalmasabb, mint a fizikai megjelenés, de struktúráltabb, mint a teljesen önálló tanulás.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Miért fontos a szervezett vs. önszervezett gyakorlat?</div>
+<div class="exp-text">A gyakorlati képzés megszervezése a tanulók számára az egyik legnagyobb kihívás felnőttképzésnél. Egyes intézmények (MESTO, Oktatási Stúdió) szervezett gyakorlati helyet biztosítanak — a tanuló csak megjelenik. Más képzőknél a tanuló maga keres mestert, ahol a gyakorlati órákat töltheti. Utóbbi esetben a képzés minősége nagymértékben a véletlentől függ: ki mellé kerül a tanuló, és az milyen minőségű szakember.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 <!-- OKTATÁSI STÚDIÓ -->
@@ -456,6 +567,21 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 <div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Ár nem publikus</div><div class="pm-item">Kevés független értékelés</div></div>
 </div>
 </div>
+</div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Miért számít, hogy hol zajlik a vizsga?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">A vizsgaszervezés rejtett terhe</div>
+<div class="exp-text">2022 után a képzés és a vizsgáztatás szétválasztásra kerültek. Sok felnőttképzőnél ez azt jelenti, hogy a tanfolyam végén a tanuló maga intézi a vizsgajelentkezést egy független akkreditált vizsgaközpontban — amely lehet más városban, idegen környezetben, ismeretlen vizsgáztatókkal. Ez plusz adminisztrációs teher és stresszforrás, különösen ha valaki szorongással küzd vizsgákon.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Az Oktatási Stúdió ígérete</div>
+<div class="exp-text">Az Oktatási Stúdió azt vállalja, hogy a vizsgát a megszokott helyszínen, a megszokott környezetben szervezi meg — a tanuló "otthon" vizsgázik. Ez csökkenti a vizsgaszorongást és a logisztikai terhet. Érdemes ezt más képzőknél is konkrétan megkérdezni: "A vizsga ugyanitt lesz, vagy máshol?"</div>
+</div>
+</div>
+</details>
 </div>
 </div>
 
@@ -499,12 +625,27 @@ h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:
 </div>
 </div>
 </div>
+<div class="explainer">
+<details>
+<summary class="explainer-toggle"><span class="arr">▶</span> Mire jó egy egynapos workshop, ha nincs papírom?</summary>
+<div class="explainer-body">
+<div class="exp-block">
+<div class="exp-title">Továbbképzés vs. alapképzés — más a célközönség</div>
+<div class="exp-text">A Fátrai-féle workshopok nem versenytársai az ÁE képzéseknek — más szükségletet elégítenek ki. Azoknak szól, akik már rendelkeznek alapképzéssel (vagy éppen elvégezték), de egy konkrét területen bizonytalan a tudásuk. Például: megvan a papírjuk, de melírozásnál mindig kínlódnak. Egy egynapos melír workshop ezt a konkrét hiányt szünteti meg, nem egy 12 hónapos képzést kell újra végigcsinálni.</div>
+</div>
+<div class="exp-block">
+<div class="exp-title">Kombinált stratégia</div>
+<div class="exp-text">Sokan a következő utat járják: elvégzik az ÁE fodrász képzést (pl. Tárnoky, MESTO) az alapvégzettségért, majd utólag csiszolják a tudásukat Fátrai-féle tematikus workshopokon. Ez pénzügyileg is ésszerű: a drágább, hosszabb képzés adja a papírt, a rövid workshopok adják a valódi szakmai mélységet.</div>
+</div>
+</div>
+</details>
+</div>
 </div>
 
 </div><!-- /cards -->
 
 <div class="warn-note">
-  <strong>Fontos megjegyzések a kutatásról:</strong> A legtöbb képző intézmény saját weboldalon jelenít meg véleményeket — ezek szelektált, pozitív visszajelzések. Független harmadik feles értékelés a legtöbb iskolánál elenyésző. A legjobb módszer: személyesen látogasd meg a kiszemelt képzőt, kérj volt hallgatókkal kapcsolatot, és ellenőrizd az aktuális felnőttképzési engedélyszámot a kepzesek.munka.hu oldalon. A <strong>Műhely Akadémia duális fodrász képzése INGYENES</strong> a 2019. évi LXXX törvény alapján — ez egyedülálló lehetőség.
+  <strong>Fontos megjegyzések a kutatásról:</strong> A legtöbb képző intézmény saját weboldalon jelenít meg véleményeket — ezek szelektált, pozitív visszajelzések. Független harmadik feles értékelés a legtöbb iskolánál elenyésző. A legjobb módszer: személyesen látogasd meg a kiszemelt képzőt, kérj volt hallgatókkal kapcsolatot, és ellenőrizd az aktuális felnőttképzési engedélyszámot a kepzesek.munka.hu oldalon. A <strong>Műhely Akadémia duális fodrász képzése</strong> törvény alapján ingyenes és munkabérrel jár — de ez a borbély képzésre épülő program (ami 1,8M Ft).
 </div>
 </div>
 </div>
