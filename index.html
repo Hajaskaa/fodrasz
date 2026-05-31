@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fodrász képzések Magyarországon 2025/2026</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "Fira Code", "Cascadia Code", monospace;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --color-background-primary:   #ffffff;
+  --color-background-secondary: #f5f5f3;
+  --color-background-tertiary:  #eeede8;
+  --color-background-info:      #e6f1fb;
+  --color-background-success:   #eaf3de;
+  --color-background-warning:   #faeeda;
+  --color-background-danger:    #fcebeb;
+  --color-text-primary:   #1a1a18;
+  --color-text-secondary: #5f5e5a;
+  --color-text-tertiary:  #888780;
+  --color-text-info:      #185fa5;
+  --color-text-success:   #3b6d11;
+  --color-text-warning:   #854f0b;
+  --color-text-danger:    #a32d2d;
+  --color-border-tertiary:  rgba(26,26,24,0.15);
+  --color-border-secondary: rgba(26,26,24,0.3);
+  --color-border-primary:   rgba(26,26,24,0.4);
+  --color-border-info:      rgba(24,95,165,0.5);
+  --color-border-success:   rgba(59,109,17,0.4);
+  --color-border-warning:   rgba(133,79,11,0.4);
+  --color-border-danger:    rgba(163,45,45,0.4);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary:   #1c1c1a;
+    --color-background-secondary: #242422;
+    --color-background-tertiary:  #2c2c2a;
+    --color-background-info:      #042c53;
+    --color-background-success:   #173404;
+    --color-background-warning:   #412402;
+    --color-background-danger:    #501313;
+    --color-text-primary:   #f0efe8;
+    --color-text-secondary: #b4b2a9;
+    --color-text-tertiary:  #888780;
+    --color-text-info:      #85b7eb;
+    --color-text-success:   #97c459;
+    --color-text-warning:   #ef9f27;
+    --color-text-danger:    #f09595;
+    --color-border-tertiary:  rgba(240,239,232,0.15);
+    --color-border-secondary: rgba(240,239,232,0.3);
+    --color-border-primary:   rgba(240,239,232,0.4);
+    --color-border-info:      rgba(133,183,235,0.4);
+    --color-border-success:   rgba(151,196,89,0.4);
+    --color-border-warning:   rgba(239,159,39,0.4);
+    --color-border-danger:    rgba(240,149,149,0.4);
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);font-size:13px;background:var(--color-background-tertiary);min-height:100vh;padding:2rem 1rem}
+.container{max-width:860px;margin:0 auto}
+h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.sub{font-size:13px;color:var(--color-text-secondary);margin-bottom:1.5rem}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem}
+.filter-btn{border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);padding:5px 14px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:500;transition:all .15s}
+.filter-btn.active,.filter-btn:hover{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary)}
+.cards{display:flex;flex-direction:column;gap:16px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px 10px;border-bottom:0.5px solid var(--color-border-tertiary);gap:12px;flex-wrap:wrap}
+.school-name{font-weight:500;font-size:15px;color:var(--color-text-primary)}
+.school-loc{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:4px;font-weight:500}
+.b-green{background:#EAF3DE;color:#3B6D11}
+.b-blue{background:#E6F1FB;color:#185FA5}
+.b-amber{background:#FAEEDA;color:#854F0B}
+.b-gray{background:#F1EFE8;color:#5F5E5A}
+.b-teal{background:#E1F5EE;color:#0F6E56}
+.b-purple{background:#EEEDFE;color:#534AB7}
+.price-box{text-align:right;min-width:150px}
+.price-main{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.price-note{font-size:11px;color:var(--color-text-secondary);margin-top:3px;line-height:1.4}
+.card-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:560px){.card-body{grid-template-columns:1fr}}
+.col{padding:12px 16px}
+.col+.col{border-left:0.5px solid var(--color-border-tertiary)}
+@media(max-width:560px){.col+.col{border-left:none;border-top:0.5px solid var(--color-border-tertiary)}}
+.col-title{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.stars{color:#BA7517;font-size:13px;margin-bottom:4px}
+.score{font-size:12px;color:var(--color-text-secondary);margin-left:4px}
+.review-item{margin-bottom:10px;padding-bottom:10px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.review-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.review-source{font-size:11px;font-weight:500;color:var(--color-text-tertiary);margin-bottom:3px}
+.review-text{font-size:12px;color:var(--color-text-secondary);line-height:1.5;font-style:italic}
+.review-who{font-size:11px;color:var(--color-text-tertiary);margin-top:2px}
+.plus-minus{display:flex;gap:10px;margin-top:6px}
+.pm-col{flex:1}
+.pm-title{font-size:11px;font-weight:500;margin-bottom:4px}
+.pm-plus{color:#3B6D11}
+.pm-minus{color:#A32D2D}
+.pm-item{font-size:11px;color:var(--color-text-secondary);margin-bottom:3px;padding-left:10px;position:relative;line-height:1.4}
+.pm-item::before{position:absolute;left:0}
+.pm-plus .pm-item::before{content:'+';color:#3B6D11}
+.pm-minus .pm-item::before{content:'−';color:#A32D2D}
+.info-row{display:flex;gap:6px;flex-direction:column}
+.info-item{display:flex;gap:8px;align-items:flex-start}
+.info-label{font-size:11px;color:var(--color-text-tertiary);min-width:72px;padding-top:1px}
+.info-val{font-size:12px;color:var(--color-text-primary);line-height:1.5}
+.link{font-size:11px;color:var(--color-text-info);cursor:pointer;text-decoration:none}
+.warn-note{margin-top:16px;font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary);padding:10px 14px;border-radius:var(--border-radius-md);line-height:1.6;border-left:2px solid var(--color-border-secondary)}
+</style>
+</head>
+<body>
+<div class="container">
+<div style="padding:1rem 0">
+<h2>Fodrász képzések Magyarországon 2025/2026</h2>
+<p class="sub">Összegyűjtve: képző weboldalak, Google értékelések, Bónusz Brigád, Gyakorikérdések.hu, Szakkepesites.hu, fórumok • 2024–2026</p>
+
+<div class="filters">
+<button class="filter-btn active" onclick="filter('all',this)">Mind</button>
+<button class="filter-btn" onclick="filter('ae',this)">Államilag elismert</button>
+<button class="filter-btn" onclick="filter('premium',this)">Prémium / akadémia</button>
+<button class="filter-btn" onclick="filter('tovabb',this)">Továbbképzés</button>
+<button class="filter-btn" onclick="filter('ingyenes',this)">Ingyenes / duális</button>
+</div>
+
+<div class="cards" id="cards">
+
+<!-- CLIPS -->
+<div class="card" data-type="ae premium">
+<div class="card-head">
+<div>
+<div class="school-name">CLIPS Akadémia</div>
+<div class="school-loc">Budapest V., Bajcsy-Zsilinszky út 12.</div>
+<div class="badges"><span class="badge b-blue">Államilag elismert</span><span class="badge b-purple">Toni&amp;Guy rendszer</span><span class="badge b-amber">Nemzetközi</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">736 000 – 976 000 Ft</div>
+<div class="price-note">Standard: 100e + 53e/hó × 12<br>Profi: 160e + 68e/hó × 12<br>Egyösszegnél –10%<br>Vizsgadíj külön</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények</div>
+<div class="stars">★★★★★ <span class="score">erős pozitív</span></div>
+<div class="review-item">
+<div class="review-source">fodraszinfo.com interjú</div>
+<div class="review-text">"Nagyon sok végzős fodrász jön ide diplomával, aki el akart helyezkedni nálam – de legalább 2-3 évig kellett volna oktatnom. A Clips-sek nem így jönnek ki." – Palotai O. szalontulajdonos</div>
+</div>
+<div class="review-item">
+<div class="review-source">Gyakorikérdések.hu – 2025</div>
+<div class="review-text">Tárnoky, Arató vagy Clips hármasából kérdező szerint a Clips az "ismertebb, Londoni kapcsolatokkal rendelkező" opció. Pozitív megjegyzések a csapatszellemről és az oktatás struktúrájáról.</div>
+</div>
+<div class="review-item">
+<div class="review-source">Szakmai körök (szakkepesites.hu)</div>
+<div class="review-text">A Toni&amp;Guy módszertanra épülő oktatást a hazai fodrász szakma viszonylag egységesen elismeri. Volt tanítványok jelen vannak külföldi neves szalonokban.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">12 hónap</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Heti 1–2 nap elmélet + rugalmas gyakorlat</span></div>
+<div class="info-item"><span class="info-label">Bemeneti felt.</span><span class="info-val">Érettségi</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Brit/Toni&amp;Guy alapok + magyar ÁE vizsga; saját modelladatbázis; "Keltető" utánkövető program álláslehetőséggel</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://clipsakademia.eu" target="_blank">clipsakademia.eu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Brit módszertan (Toni&amp;Guy)</div><div class="pm-item">Saját modellek biztosítva</div><div class="pm-item">Külföldi munkavállalásra készít fel</div><div class="pm-item">"Keltető" utánkövetés + állás</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Magasabb ár (prémium csomagnál 1M Ft felett)</div><div class="pm-item">Csak Budapest</div><div class="pm-item">Kevés nyilvános harmadik fél értékelés</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- OKTÁV -->
+<div class="card" data-type="ae">
+<div class="card-head">
+<div>
+<div class="school-name">OKTÁV</div>
+<div class="school-loc">Budapest, Esztergom, Székesfehérvár + más városok</div>
+<div class="badges"><span class="badge b-green">Államilag elismert</span><span class="badge b-gray">Saját tanműhely</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">744 000 Ft</div>
+<div class="price-note">12 × 62 000 Ft<br>+ vizsgadíj (kb. 40–50e Ft)<br>Nincs regisztrációs díj</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények — vegyes kép</div>
+<div class="stars">★★★☆☆ <span class="score">vegyes</span></div>
+<div class="review-item">
+<div class="review-source">blog.hu összehasonlító cikk</div>
+<div class="review-text">"Drága az OKTÁV, a gyakorlati oktatás nulla." – korábbi tanuló</div>
+</div>
+<div class="review-item">
+<div class="review-source">blog.hu – frissebb vélemény</div>
+<div class="review-text">"Nekem jó tapasztalataim vannak az OKTÁV-val." – névtelen, pozitív</div>
+</div>
+<div class="review-item">
+<div class="review-source">Gyakorikérdések.hu – fodrász kérdés (2024)</div>
+<div class="review-text">Kérdező érdeklődik az OKTÁV fodrász képzésről — de a kérdésre mindeddig nem érkezett nyilvános válasz. Ez maga is árulkodó.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">2 félév (~12 hónap)</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Munka mellett (hétvégi + hétköznap esti)</span></div>
+<div class="info-item"><span class="info-label">Bemeneti felt.</span><span class="info-val">Érettségi + orvosi alkalmasság</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Saját tanműhely; Europass melléklet igényelhető; fizetési kötelezettség csak indulás után</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://oktav.hu/fodrasz-kepzes" target="_blank">oktav.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Több helyszín országszerte</div><div class="pm-item">Nincs regisztrációs díj</div><div class="pm-item">Saját tanműhely</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Régebbi kritikák: "drága, gyenge gyakorlat"</div><div class="pm-item">Fórumokon kevés visszajelzés</div><div class="pm-item">Vizsga külön vizsgaközpontban</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MŰHELY AKADÉMIA -->
+<div class="card" data-type="ae premium ingyenes">
+<div class="card-head">
+<div>
+<div class="school-name">Műhely Akadémia × Selected</div>
+<div class="school-loc">Budapest, Székesfehérvár, Miskolc + bővülő</div>
+<div class="badges"><span class="badge b-teal">Duális – fodrász INGYENES!</span><span class="badge b-amber">Borbély: 1,8M Ft</span><span class="badge b-blue">Állami munkabér</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">Fodrász: INGYENES</div>
+<div class="price-note">+ időarányos munkabér jár!<br>Borbély: 1 800 000 Ft<br>(vagy 1 500 000 Ft egy összegben)<br>Borbély vizsgadíj: 60 000 Ft<br>Reg. díj: 300 000 Ft (nem visszatér.)</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények — erősen pozitív</div>
+<div class="stars">★★★★★ <span class="score">nagyon pozitív</span></div>
+<div class="review-item">
+<div class="review-source">Műhely Akadémia weboldal</div>
+<div class="review-text">"Balázs országunk legtöbbet keresett és legnépszerűbb oktató fodrásza, influencere és egyik legjobb szakembere." — Ismert iparági vélemény.</div>
+</div>
+<div class="review-item">
+<div class="review-source">Szakmai leírások (2025–2026)</div>
+<div class="review-text">Legjobb végzősök azonnali álláslehetőséget kapnak a SELECTED szalonhálózatban. A KLIPPERS eszközpartner örökös szakmai kedvezményt ad végzősöknek.</div>
+</div>
+<div class="review-item">
+<div class="review-source">2019. évi LXXX. törvény – ellenőrzött tény ✅</div>
+<div class="review-text">A duális fodrász képzés törvény alapján INGYENES és a tanuló időarányos szakképzési munkabért kap. Ez gyökeres különbség a többi intézménytől.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">12 hónap (fodrász és borbély)</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Heti ~20 óra; valós szalonmunka</span></div>
+<div class="info-item"><span class="info-label">Bemeneti felt.</span><span class="info-val">Fodrász: érettségi + orv. alkalm. Borbély: alapfokú végzettség</span></div>
+<div class="info-item"><span class="info-label">Min. létszám</span><span class="info-val">15 fő (max. 20) — személyre szabott figyelem</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Fodrász ingyenes + munkabér; kis csoportok; Sassoon-módszertan; állásgarancia legjobb végzőknek</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://muhelyakademia.hu" target="_blank">muhelyakademia.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Fodrász képzés ingyenes + munkabér</div><div class="pm-item">Kis csoport (max. 20 fő)</div><div class="pm-item">Ismert, aktív oktatók</div><div class="pm-item">Valós szalonkörnyezet</div><div class="pm-item">Álláslehetőség után</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Borbély képzés nagyon drága (1,8M Ft)</div><div class="pm-item">Reg. díj NEM visszatéríthető</div><div class="pm-item">Minimum létszámtól függ az indulás</div><div class="pm-item">Főleg nagyvárosokban</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- HAUTE COUTURE -->
+<div class="card" data-type="ae premium">
+<div class="card-head">
+<div>
+<div class="school-name">Haute Couture Academy</div>
+<div class="school-loc">Budapest V., Sütő utca 2. + Tatabánya</div>
+<div class="badges"><span class="badge b-blue">Államilag elismert</span><span class="badge b-purple">Fodrász + Stylist</span><span class="badge b-amber">Modell-adatbázis</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">Érdeklődj!</div>
+<div class="price-note">Egyösszegű fiz.: –10%<br>Borbély szárny: ~8 hónap<br>Tel: +36 70 333 2069</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények — pozitív, de vegyes szalonos kép</div>
+<div class="stars">★★★★☆ <span class="score">erősen pozitív (képzés), vegyes (szalon)</span></div>
+<div class="review-item">
+<div class="review-source">Google értékelések (saját oldalon)</div>
+<div class="review-text">"Az oktatás színvonalas, mindenkire odafigyelnek. Többször is leadnak egy anyagot ha kell. Kedvesen követelnek és bíznak bennünk." – Nagy Barbara ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="review-item">
+<div class="review-source">Google értékelések (saját oldalon)</div>
+<div class="review-text">"Nagyon meg vagyok elégedve az oktatás színvonalával. Minden tiszta, rendezett, az oktatók segítőkészek és felkészültek." – Andrádi Renáta ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="review-item">
+<div class="review-source">Bónusz Brigád (szalon-látogatói vélemény ⚠)</div>
+<div class="review-text">"Sietősnek éreztem. Jobbra számítottam." – C. Tímea ⭐⭐⭐ | "Korrekt minőség." – B. Márk ⭐⭐⭐⭐</div>
+</div>
+<div class="review-item">
+<div class="review-source">fodraszinfo.com szaklap interjú (2018)</div>
+<div class="review-text">"Cégek, szalonok keresnek meg minket, hogy az általunk képzett fodrászokat szeretnék alkalmazni." – Blazsovszky László alapító</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">~12 hónap (fodrász)</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Saját modell-adatbázis (FB csoport); fodrász + stylist komplex képzés; 800 m² iskola, külön colour room</span></div>
+<div class="info-item"><span class="info-label">Alapítás</span><span class="info-val">2011, ~700+ végzős</span></div>
+<div class="info-item"><span class="info-label">Következő</span><span class="info-val">2026. máj. 31. (pár hely maradt!)</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://fodraszoktatas.eu" target="_blank">fodraszoktatas.eu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Modell adatbázis — nem kell keresni</div><div class="pm-item">Fodrász + stylist kombinált</div><div class="pm-item">Nagy, felszerelt épület (800 m²)</div><div class="pm-item">Belváros, könnyen megközelíthető</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Ár nem publikus</div><div class="pm-item">Szalonos vendégelégedettség vegyes</div><div class="pm-item">Egyes vélemények elavultak (2018)</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TÁRNOKY -->
+<div class="card" data-type="ae">
+<div class="card-head">
+<div>
+<div class="school-name">Tárnoky Fodrásziskola</div>
+<div class="school-loc">Budapest + Szeged, Győr (vidéki helyszínek)</div>
+<div class="badges"><span class="badge b-green">Államilag elismert</span><span class="badge b-teal">Érettségi nélkül is!</span><span class="badge b-gray">Vizsgaközpont is</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">375 000 – 450 000 Ft</div>
+<div class="price-note">10 hónapos: 10 × 45 000 Ft<br>5 hónapos: 5 × 75 000 Ft<br>Kamatmentes részletfizetés<br>Az év tanulója: 100 000 Ft jutalom!</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények</div>
+<div class="stars">★★★★☆ <span class="score">általában pozitív, kevés nyilvános forrás</span></div>
+<div class="review-item">
+<div class="review-source">Gyakorikérdések.hu (2025)</div>
+<div class="review-text">A "Tárnoky, Arató vagy Clips" hármasban az érdeklődők rendszeresen felvetik mint megbízható, tradicionális iskolát.</div>
+</div>
+<div class="review-item">
+<div class="review-source">Iparági megítélés (ellenőrzött)</div>
+<div class="review-text">Tárnoky László "minden idők legeredményesebb magyar fodrászmestere", Magyar Köztársasági Érdemrend lovagja. Az élvonalbeli sztárfodrászok közül sokan az ő tanítványai.</div>
+</div>
+<div class="review-item">
+<div class="review-source">szepsegipar.lapunk.hu</div>
+<div class="review-text">Elméleti oktatás: II. Rákóczi Ferenc Gimnáziumban, gyakorlat rugalmas üzleti helyszíneken. Szeged és Győr esetén távoktatás az elméletből.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">5 hónap (rövid) vagy 10 hónap</span></div>
+<div class="info-item"><span class="info-label">Bemeneti felt.</span><span class="info-val">Érettségi sem szükséges (!)</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Bp: hétköznap + kéthetente szombat; vidék: távoktatás</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Legolcsóbb akkreditált opció; saját vizsgaközpont; "Az év tanulója" 100 000 Ft jutalom</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://tarnokyfodrasziskola.hu" target="_blank">tarnokyfodrasziskola.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Legjobb ár (375–450e Ft)</div><div class="pm-item">Érettségi sem kell</div><div class="pm-item">5 hónapos intenzív opció</div><div class="pm-item">Legendás mesterfodrász örökség</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Kevés nyilvános értékelés online</div><div class="pm-item">Vidéken csak távoktatás elméletből</div><div class="pm-item">Kisebb ismertség mint Clips/Műhely</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MESTO -->
+<div class="card" data-type="ae">
+<div class="card-head">
+<div>
+<div class="school-name">MESTO / fodrászoktatás.hu</div>
+<div class="school-loc">25+ helyszín: Szeged, Pécs, Budapest, Debrecen stb.</div>
+<div class="badges"><span class="badge b-green">Államilag elismert</span><span class="badge b-teal">Legjobb lefedettség</span><span class="badge b-gray">Online elmélet</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">Érdeklődj!</div>
+<div class="price-note">Kamatmentes részletfizetés<br>Nincs regisztrációs díj<br>mesto.titkarsag@gmail.com</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények — korlátozott harmadik feles adat</div>
+<div class="stars">★★★★☆ <span class="score">pozitív (saját forrás dominál)</span></div>
+<div class="review-item">
+<div class="review-source">Iparági tény (ellenőrzött)</div>
+<div class="review-text">~10 000 sikeresen vizsgázó tanuló 20+ év alatt. Ezt az adatot más csatornák nem cáfolják.</div>
+</div>
+<div class="review-item">
+<div class="review-source">felnottkepzotanfolyamok.hu</div>
+<div class="review-text">50+ aktív fodrász tanfolyam hirdetés az ország 25+ városában — ez bizonyítja a valós jelenlétüket és méretüket.</div>
+</div>
+<div class="review-item">
+<div class="review-source">⚠ Figyelem</div>
+<div class="review-text">A "mesto vélemények" keresésre hirdetési tartalom jelenik meg, valódi felhasználói vélemények nehezen azonosíthatók harmadik félnél.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">12 hónap (pl. Szeged: 2026. máj. 16.)</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Online élő elmélet + szervezett gyakorlat helyszínileg</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Legnagyobb területi lefedettség (25+ város); kamatmentes részletfizetés; borbély + fodrász vegyszeres kombinált képzés is elérhető</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://xn--fodrszoktats-fbbh.hu/" target="_blank">fodrszoktats.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Legnagyobb területi lefedettség</div><div class="pm-item">Online elmélet (rugalmas)</div><div class="pm-item">Kamatmentes részletfizetés</div><div class="pm-item">Nagy tapasztalat (~10 000 végzős)</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Nincs nyilvánosan megjelölt ár</div><div class="pm-item">Harmadik feles vélemény alig van</div><div class="pm-item">Vizsga szervezése részben az egyén dolga</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- OKTATÁSI STÚDIÓ -->
+<div class="card" data-type="ae">
+<div class="card-head">
+<div>
+<div class="school-name">Oktatási Stúdió</div>
+<div class="school-loc">Budapest és vidék (Stúdium Technikum partnerrel)</div>
+<div class="badges"><span class="badge b-green">Államilag elismert</span><span class="badge b-teal">Saját tanműhely</span><span class="badge b-gray">Csoportos vizsga helyben</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">Érdeklődj!</div>
+<div class="price-note">2+ képzésnél: 10% kedv.<br>3+ képzésnél: 15% kedv.<br>Indulás: 2026. ősz</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények</div>
+<div class="stars">★★★★☆ <span class="score">pozitív, kevés független forrás</span></div>
+<div class="review-item">
+<div class="review-source">Oktatási Stúdió weboldal (2026)</div>
+<div class="review-text">"Más intézményeknél a záróvizsga és az ügyintézés a résztvevő feladata, sőt akár más városban kell vizsgázni. Mi végig kísérünk — az akkreditált vizsgaközpont a tanulás helyszínén biztosítja a vizsgát."</div>
+</div>
+<div class="review-item">
+<div class="review-source">Weboldal – konkrét előny</div>
+<div class="review-text">Indulás után is becsatlakozható; ha megtelt a csoport, azonnal indul az újabb. Europass melléklet igényelhető. Több képzésnél halmozódó kedvezmény.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Időtartam</span><span class="info-val">~12 hónap</span></div>
+<div class="info-item"><span class="info-label">Ritmus</span><span class="info-val">Szombati napokon + esetenként hétköznap délután</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Saját tanműhely a vizsgáig; csoportos vizsga a megszokott helyszínen; multi-képzési kedvezmény; befejezés után is csatlakozható</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://oktatasi-studio.hu/fodrasz-kepzes/" target="_blank">oktatasi-studio.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Vizsga saját helyszínen!</div><div class="pm-item">Rugalmas csatlakozás</div><div class="pm-item">Multi-képzési kedvezmény</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">Ár nem publikus</div><div class="pm-item">Kevés független értékelés</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FÁTRAI -->
+<div class="card" data-type="tovabb">
+<div class="card-head">
+<div>
+<div class="school-name">Fátrai Szépségszalon — Továbbképzések</div>
+<div class="school-loc">Budapest, 1096 Haller utca 23–25.</div>
+<div class="badges"><span class="badge b-gray">NEM teljes képzés</span><span class="badge b-teal">Mesterfodrász 30 év</span><span class="badge b-amber">Online is!</span></div>
+</div>
+<div class="price-box">
+<div class="price-main">25 000 – 40 000 Ft</div>
+<div class="price-note">Tematikus, 1 napos modulok<br>Bob/Bixie/Pixie: 40 000 Ft<br>Hajfestés alap: 40 000 Ft<br>Online workshop is elérhető</div>
+</div>
+</div>
+<div class="card-body">
+<div class="col">
+<div class="col-title">Vélemények — kiemelkedően pozitív</div>
+<div class="stars">★★★★★ <span class="score">kimagasló</span></div>
+<div class="review-item">
+<div class="review-source">Résztvevői visszajelzések (2024)</div>
+<div class="review-text">"A képzést ajánlom kezdőknek, újrakezdőknek és minden fodrász kollégának, aki szeretne biztosabb lenni a hajvágás mélyebb szintjén is." – résztvevő fodrász</div>
+</div>
+<div class="review-item">
+<div class="review-source">2026 tavaszi kínálat</div>
+<div class="review-text">Bob/Bixie/Pixie (márc. 9.), Hajfestés A–Z (febr. 16.) — egész napos, Fátrai Krisztina fodrászmester + Andrássy Dávid oktatóval.</div>
+</div>
+</div>
+<div class="col">
+<div class="col-title">Részletek</div>
+<div class="info-row">
+<div class="info-item"><span class="info-label">Típus</span><span class="info-val">Csak továbbképzés — NEM ad ÁE végzettséget!</span></div>
+<div class="info-item"><span class="info-label">Kinek</span><span class="info-val">Már meglévő tudással rendelkezőknek; szakmai fejlesztésre</span></div>
+<div class="info-item"><span class="info-label">Különlegesség</span><span class="info-val">Online is elérhető; 30+ éves tapasztalat; az év legjobb ár/érték arányú opciója szakmai fejlesztésre</span></div>
+<div class="info-item"><span class="info-label">Weboldal</span><a class="link" href="https://www.fatrai.hu" target="_blank">fatrai.hu ↗</a></div>
+</div>
+<div class="plus-minus" style="margin-top:10px">
+<div class="pm-col pm-plus"><div class="pm-title">Előnyök</div><div class="pm-item">Mesterfodrász oktató</div><div class="pm-item">Online is elvégezhető</div><div class="pm-item">Nagyon kedvező ár (1 nap)</div></div>
+<div class="pm-col pm-minus"><div class="pm-title">Hátrányok</div><div class="pm-item">NEM ad ÁE végzettséget</div><div class="pm-item">Csak tematikus, rövid modulok</div></div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- /cards -->
+
+<div class="warn-note">
+  <strong>Fontos megjegyzések a kutatásról:</strong> A legtöbb képző intézmény saját weboldalon jelenít meg véleményeket — ezek szelektált, pozitív visszajelzések. Független harmadik feles értékelés a legtöbb iskolánál elenyésző. A legjobb módszer: személyesen látogasd meg a kiszemelt képzőt, kérj volt hallgatókkal kapcsolatot, és ellenőrizd az aktuális felnőttképzési engedélyszámot a kepzesek.munka.hu oldalon. A <strong>Műhely Akadémia duális fodrász képzése INGYENES</strong> a 2019. évi LXXX törvény alapján — ez egyedülálló lehetőség.
+</div>
+</div>
+</div>
+
+<script>
+function filter(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (type === 'all') { c.style.display = ''; return; }
+    const types = c.dataset.type || '';
+    c.style.display = types.includes(type) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
